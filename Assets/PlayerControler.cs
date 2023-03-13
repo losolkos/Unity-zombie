@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
 {
+    float Hp = 10;
     public GameObject BulletPrefab;
     public float bulletSpeed = 20.0f;
     public float playerSpeed = 2;
@@ -38,5 +39,22 @@ public class PlayerControler : MonoBehaviour
         bullet.transform.parent = null;
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward*bulletSpeed, ForceMode.VelocityChange);
         Destroy(bullet, 5);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Hp--;
+            if (Hp <= 0) Die();
+            Vector3 pushVector = collision.gameObject.transform.position - transform.position;
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(pushVector.normalized * 5, ForceMode.Impulse);
+        }
+    }
+    void Die()
+    {
+        transform.Translate(Vector3.up);
+        transform.Rotate(Vector3.right * -90);
+        GetComponent<BoxCollider>().enabled = false;
     }
 }
