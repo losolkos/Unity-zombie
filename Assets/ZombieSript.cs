@@ -9,6 +9,7 @@ public class ZombieSript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 randomVector = new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

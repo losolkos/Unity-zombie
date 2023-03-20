@@ -55,6 +55,7 @@ public class PlayerControler : MonoBehaviour
     {
         transform.Translate(Vector3.up);
         transform.Rotate(Vector3.right * -90);
-        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = true;
+        Destroy(transform.gameObject, 10);
     }
 }
