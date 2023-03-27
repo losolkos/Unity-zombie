@@ -507,7 +507,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 1578449256722939581, guid: 0c6db992009fe9145b7a01c6044d6aba, type: 3}
   bulletSpeed: 20
   playerSpeed: 2
-  hpBar: {fileID: 0}
+  hpBar: {fileID: 95168443}
 --- !u!114 &676713394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,6 +709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zombiee: {fileID: 8512307033736985874, guid: 7d85f924902fd0f498122d8319e639c2, type: 3}
+  player: {fileID: 0}
+  healPrefab: {fileID: 6210392095309803762, guid: 701a139fd53fd034ca7e71e8046e8384, type: 3}
 --- !u!4 &799434390
 Transform:
   m_ObjectHideFlags: 0

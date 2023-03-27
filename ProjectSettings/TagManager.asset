@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - gameObject
   - bullet
+  - Lek
   layers:
   - Default
   - TransparentFX

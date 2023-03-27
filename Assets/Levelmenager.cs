@@ -7,10 +7,13 @@ using UnityEngine.UIElements;
 public class Levelmenager : MonoBehaviour
 {
     public GameObject Zombiee;
+    public GameObject player;
+    public GameObject healPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindWithTag("Player");
     }
     
     
@@ -20,16 +23,22 @@ public class Levelmenager : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Enemy").Length<4)
         {
             Instantiate(Zombiee, GetRandomPosition(), Quaternion.identity);
-
-          
+        }
+        if (GameObject.FindGameObjectsWithTag("Lek").Length < 1)
+        {
+            Instantiate(healPrefab, GetRandomPosition(), Quaternion.identity);
         }
 
     }
     Vector3 GetRandomPosition()
     {
-        Vector3 position = new Vector3(Random.Range(0, 10), 0, Random.Range(0, 10));
-        position = position.normalized * Random.Range(10, 15);
-        return position;
+        {
+            Vector3 direction = Random.insideUnitSphere.normalized;
+            direction.y = 0;
+            Vector3 position = player.transform.position - (direction * Random.Range(10, 15));
+
+            return position;
+        }
     }
 
 }

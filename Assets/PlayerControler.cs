@@ -21,6 +21,7 @@ public class PlayerControler : MonoBehaviour
     {
         movementVector = Vector2.zero;
         bulletSpawn = transform.Find("BulletSpawn");
+        hpScrollBar = hpBar.GetComponent<Scrollbar>();
     }
 
     // Update is called once per frame
@@ -54,6 +55,12 @@ public class PlayerControler : MonoBehaviour
             hpScrollBar.size = Hp / 10;
             Vector3 pushVector = collision.gameObject.transform.position - transform.position;
             collision.gameObject.GetComponent<Rigidbody>().AddForce(pushVector.normalized * 5, ForceMode.Impulse);
+        }
+        if (collision.gameObject.CompareTag("Lek"))
+        {
+            Hp = 10;
+            hpScrollBar.size = Hp / 10;
+            Destroy(collision.gameObject);
         }
     }
     void Die()
