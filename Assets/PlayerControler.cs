@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class PlayerControler : MonoBehaviour
     public float playerSpeed = 2;
     Vector2 movementVector;
     Transform bulletSpawn;
+    public GameObject hpBar;
+    Scrollbar hpScrollBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +51,7 @@ public class PlayerControler : MonoBehaviour
         {
             Hp--;
             if (Hp <= 0) Die();
+            hpScrollBar.size = Hp / 10;
             Vector3 pushVector = collision.gameObject.transform.position - transform.position;
             collision.gameObject.GetComponent<Rigidbody>().AddForce(pushVector.normalized * 5, ForceMode.Impulse);
         }
@@ -56,6 +61,7 @@ public class PlayerControler : MonoBehaviour
         transform.Translate(Vector3.up);
         transform.Rotate(Vector3.right * -90);
         GetComponent<BoxCollider>().enabled = true;
-        Destroy(transform.gameObject, 10);
+        Destroy(transform.gameObject, 3);
+        Time.timeScale = 0;
     }
 }
