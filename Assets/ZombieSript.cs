@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieSript : MonoBehaviour
 {
     float hp = 10;
     GameObject player;
+    NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 randomVector = new Vector3(Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90));
         player = GameObject.FindGameObjectWithTag("Player");
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -18,10 +20,13 @@ public class ZombieSript : MonoBehaviour
     {
 
         if (hp > 0)
-        {
-            transform.LookAt(player.transform.position);
+       {
 
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            agent.destination = player.transform.position;
+        }
+        else
+        {
+            agent.speed = 0;
         }
     }
     private void OnCollisionEnter(Collision collision)

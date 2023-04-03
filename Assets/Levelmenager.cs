@@ -35,7 +35,7 @@ public class Levelmenager : MonoBehaviour
         {
             Vector3 direction = Random.insideUnitSphere.normalized;
             direction.y = 0;
-            Vector3 position = player.transform.position - (direction * Random.Range(10, 15));
+            Vector3 position = player.transform.position - (direction * Random.Range(15, 20));
 
             return position;
         }
