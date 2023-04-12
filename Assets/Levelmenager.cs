@@ -9,6 +9,7 @@ public class Levelmenager : MonoBehaviour
     public GameObject Zombiee;
     public GameObject player;
     public GameObject healPrefab;
+    public GameObject itemPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,8 @@ public class Levelmenager : MonoBehaviour
             return position;
         }
     }
-
+   
+   
 }
 
     

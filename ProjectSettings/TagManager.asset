@@ -8,6 +8,10 @@ TagManager:
   - gameObject
   - bullet
   - Lek
+  - Item
+  - Tree
+  - Tree2
+  - budynek
   layers:
   - Default
   - TransparentFX

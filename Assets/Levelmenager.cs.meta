@@ -3,7 +3,15 @@ guid: 79c5e672bee5fbc4a826b56e6b104d73
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Zombiee: {fileID: 8512307033736985874, guid: 7d85f924902fd0f498122d8319e639c2, type: 3}
+  - player: {instanceID: 0}
+  - healPrefab: {fileID: 6210392095309803762, guid: 701a139fd53fd034ca7e71e8046e8384, type: 3}
+  - itemPrefab: {instanceID: 0}
+  - Tree: {fileID: 8207355905578980546, guid: 9ff81711200aac74f84bfcd3970374c5, type: 3}
+  - Tree2: {fileID: 3651072454186458584, guid: 4d866ba3a446aa54eb8d5c989ab34d14, type: 3}
+  - budynek: {fileID: 6794925895319161030, guid: 4deab72244ba5614eaa87f85947f3a00, type: 3}
+  - budynek2: {fileID: 2424049063001022027, guid: 83cb933601d96e64b9ab8d3db887b537, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
