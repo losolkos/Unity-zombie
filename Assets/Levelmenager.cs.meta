@@ -8,10 +8,7 @@ MonoImporter:
   - player: {instanceID: 0}
   - healPrefab: {fileID: 6210392095309803762, guid: 701a139fd53fd034ca7e71e8046e8384, type: 3}
   - itemPrefab: {instanceID: 0}
-  - Tree: {fileID: 8207355905578980546, guid: 9ff81711200aac74f84bfcd3970374c5, type: 3}
-  - Tree2: {fileID: 3651072454186458584, guid: 4d866ba3a446aa54eb8d5c989ab34d14, type: 3}
-  - budynek: {fileID: 6794925895319161030, guid: 4deab72244ba5614eaa87f85947f3a00, type: 3}
-  - budynek2: {fileID: 2424049063001022027, guid: 83cb933601d96e64b9ab8d3db887b537, type: 3}
+  - zombie2: {fileID: 6153996971731680089, guid: e0eb6f1b6411a344aab64a623f8e3fc7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

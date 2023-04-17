@@ -35,7 +35,7 @@ public class PlayerControler : MonoBehaviour
     {
         movementVector = inputValue.Get<Vector2>();
 
-        Debug.Log(movementVector.ToString());
+        //Debug.Log(movementVector.ToString());
     }
 
     void OnFire()
@@ -61,6 +61,12 @@ public class PlayerControler : MonoBehaviour
             Hp = 10;
             hpScrollBar.size = Hp / 10;
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Enemy2"))
+        {
+            Hp = 0;
+            if (Hp <= 0) Die();
+            hpScrollBar.size = Hp / 10;
         }
     }
     void Die()

@@ -985,8 +985,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.7, z: 0}
+  m_Size: {x: 1, y: 1.7192972, z: 1}
+  m_Center: {x: 0, y: 1.0596482, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,6 +1114,7 @@ MonoBehaviour:
   player: {fileID: 0}
   healPrefab: {fileID: 6210392095309803762, guid: 701a139fd53fd034ca7e71e8046e8384, type: 3}
   itemPrefab: {fileID: 0}
+  zombie2: {fileID: 6153996971731680089, guid: e0eb6f1b6411a344aab64a623f8e3fc7, type: 3}
 --- !u!4 &799434390
 Transform:
   m_ObjectHideFlags: 0

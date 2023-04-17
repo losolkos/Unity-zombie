@@ -12,6 +12,7 @@ TagManager:
   - Tree
   - Tree2
   - budynek
+  - Enemy2
   layers:
   - Default
   - TransparentFX

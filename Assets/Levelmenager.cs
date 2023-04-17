@@ -10,24 +10,30 @@ public class Levelmenager : MonoBehaviour
     public GameObject player;
     public GameObject healPrefab;
     public GameObject itemPrefab;
+    public GameObject zombie2;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
     }
-    
-    
+
+
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length<4)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length < 4)
         {
-            Instantiate(Zombiee, GetRandomPosition(), Quaternion.identity);
+            Instantiate(Zombiee, GetRandomPosition(), Quaternion.identity);    
+            
+            if (GameObject.FindGameObjectsWithTag("Lek").Length < 1)
+            {
+                Instantiate(healPrefab, GetRandomPosition(), Quaternion.identity);
+            }
         }
-        if (GameObject.FindGameObjectsWithTag("Lek").Length < 1)
+        if (GameObject.FindGameObjectsWithTag("Enemy2").Length < 2)
         {
-            Instantiate(healPrefab, GetRandomPosition(), Quaternion.identity);
+            Instantiate(zombie2, GetRandomPosition(), Quaternion.identity);
         }
 
     }
@@ -41,8 +47,8 @@ public class Levelmenager : MonoBehaviour
             return position;
         }
     }
-   
-   
+
+
 }
 
     

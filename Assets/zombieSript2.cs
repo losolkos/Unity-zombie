@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ZombieSript : MonoBehaviour
+public class zombieSript2 : MonoBehaviour
 {
     public float sightRange = 15f;
-    public float hearRange = 5f;
-    float hp = 10;
+    int hp = 30;
     GameObject player;
     NavMeshAgent agent;
     private bool playerVisible = false;
-    private bool playerHearable = false;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,19 +30,8 @@ public class ZombieSript : MonoBehaviour
                 playerVisible = true;
             else
                 playerVisible = false;
-
-            
         }
-        Collider[] heardObjects = Physics.OverlapSphere(transform.position, hearRange);
-
-        playerHearable = false;
-        foreach (Collider collider in heardObjects)
-        {
-            if (collider.gameObject.CompareTag("Player"))
-            {
-                playerHearable = true;
-            }
-        }       agent.isStopped = !playerVisible && !playerHearable;
+        agent.isStopped = !playerVisible;
         if (hp > 0)
         {
 
@@ -64,12 +50,10 @@ public class ZombieSript : MonoBehaviour
                 transform.Translate(Vector3.up);
                 transform.Rotate(Vector3.right * -90);
                 GetComponent<BoxCollider>().enabled = true;
-                agent.speed = 0;
                 Destroy(transform.gameObject, 3);
             };
         }
-       
+
     }
 
 }
-
