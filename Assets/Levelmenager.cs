@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class Levelmenager : MonoBehaviour
 {
+    public NavMeshSurface[] surfaces;
     public GameObject Zombiee;
     public GameObject player;
     public GameObject healPrefab;
@@ -16,6 +17,12 @@ public class Levelmenager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+
+        for (int i = 0; i < surfaces.Length; i++)
+        {
+            surfaces[i].BuildNavMesh();
+        }
+
     }
 
 

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/main menu.unity
+    guid: 332607335cd17c04ca301a30566be1d2
+  - enabled: 1
+    path: Assets/Scenes/zombie.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/DIE.unity
+    guid: 5032599eba4092c49ac81e1dd71e60b0
   m_configObjects: {}

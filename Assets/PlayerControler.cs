@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
@@ -76,5 +77,6 @@ public class PlayerControler : MonoBehaviour
         GetComponent<BoxCollider>().enabled = true;
         Destroy(transform.gameObject, 3);
         Time.timeScale = 0;
+        SceneManager.LoadScene("DIE");
     }
 }
